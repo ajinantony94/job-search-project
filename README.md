@@ -1,2 +1,2 @@
 # job-search-project
-simple project of job searching using springboot , react and mongodb
+simple backend api for job searching platform using spring boot and mongoDb
