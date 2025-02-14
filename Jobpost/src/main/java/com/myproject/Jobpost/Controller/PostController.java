@@ -18,21 +18,21 @@ public class PostController {
     SearchRepository srepo;
 
     @GetMapping("/allPosts")
-    public List<Post> getAllPost(){
-        return repo.findAll();
+    public ResponseEntity<List<Post>> getAllPost(){
+        return ResponseEntity.ok(repo.findAll());
     }
 
     //to search some datas!!!
     @GetMapping("/posts/{text}")
 
-    public List<Post> search(@PathVariable String text){
-        return srepo.findbytext(text);
+    public ResponseEntity<List<Post>> search(@PathVariable String text){
+        return ResponseEntity.ok(srepo.findbytext(text));
     }
 
     @PostMapping("/post")
 
-    public Post postPost(@RequestBody Post post){
-        return repo.save(post);
+    public ResponseEntity<Post> postPost(@RequestBody Post post){
+        return ResponseEnitity.ok(repo.save(post));
     }
 
 
